@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap);
 html {
   background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
   background-size: cover;
@@ -33,7 +34,9 @@ body {
   transform: translateY(-3px);
   /* account for the height of the clock hands */
 }
-.clock-face span {
+.clock-face .note {
+  font-family: "Permanent Marker", cursive;
+  opacity: 0;
   width: 30rem;
   height: 30rem;
   position: absolute;
@@ -41,41 +44,82 @@ body {
   top: 0%;
   transform: translate(-50%, -50%);
 }
-.clock-face span:nth-of-type(1) {
+.clock-face .note:nth-of-type(1) {
   transform: rotate(30deg);
 }
-.clock-face span:nth-of-type(2) {
+.clock-face .note:nth-of-type(2) {
   transform: rotate(60deg);
 }
-.clock-face span:nth-of-type(3) {
+.clock-face .note:nth-of-type(3) {
   transform: rotate(90deg);
 }
-.clock-face span:nth-of-type(4) {
+.clock-face .note:nth-of-type(4) {
   transform: rotate(120deg);
 }
-.clock-face span:nth-of-type(5) {
+.clock-face .note:nth-of-type(5) {
   transform: rotate(150deg);
 }
-.clock-face span:nth-of-type(6) {
+.clock-face .note:nth-of-type(6) {
   transform: rotate(180deg);
 }
-.clock-face span:nth-of-type(7) {
+.clock-face .note:nth-of-type(7) {
   transform: rotate(210deg);
 }
-.clock-face span:nth-of-type(8) {
+.clock-face .note:nth-of-type(8) {
   transform: rotate(240deg);
 }
-.clock-face span:nth-of-type(9) {
+.clock-face .note:nth-of-type(9) {
   transform: rotate(270deg);
 }
-.clock-face span:nth-of-type(10) {
+.clock-face .note:nth-of-type(10) {
   transform: rotate(300deg);
 }
-.clock-face span:nth-of-type(11) {
+.clock-face .note:nth-of-type(11) {
   transform: rotate(330deg);
 }
-.clock-face span:nth-of-type(12) {
+.clock-face .note:nth-of-type(12) {
   transform: rotate(360deg);
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.clock-face .bigger {
+  z-index: 2;
+  font-size: 70px;
+  color: lime;
+  -webkit-animation: fadeIn ease 5s;
+          animation: fadeIn ease 5s;
+  -webkit-animation: fadeOut ease 5s;
+          animation: fadeOut ease 5s;
 }
 
 .hand {

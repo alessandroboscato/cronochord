@@ -7,6 +7,9 @@ const secondHand = document.querySelector('.second-hand');
   function checkSeconds(seconds){
     if(seconds in obj) {
       synth.triggerAttackRelease(obj[seconds], '1n');
+      const elm = document.getElementById(obj[seconds]);
+      elm.classList.add("bigger");
+
     }
   }
 

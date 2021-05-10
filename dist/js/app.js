@@ -29,6 +29,8 @@ var obj = {
 function checkSeconds(seconds) {
   if (seconds in obj) {
     synth.triggerAttackRelease(obj[seconds], '1n');
+    var elm = document.getElementById(obj[seconds]);
+    elm.classList.add("bigger");
   }
 }
 

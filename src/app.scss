@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 html {
      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
      background-size: cover;
@@ -36,7 +38,9 @@ html {
      height: 100%;
      transform: translateY(-3px); /* account for the height of the clock hands */
 
-     span {
+     .note {
+      font-family: 'Permanent Marker', cursive;
+      opacity: 0;
       width: 30rem;
       height: 30rem;
       position: absolute;
@@ -46,9 +50,35 @@ html {
      }
 
      @for $i from 1 through 12 {
-        span:nth-of-type(#{$i}){
+        .note:nth-of-type(#{$i}){
           transform: rotate(30deg * $i);
         }
+     }
+
+     @keyframes fadeIn {
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
+    }
+
+    @keyframes fadeOut {
+     0% {
+       opacity:1;
+     }
+     100% {
+       opacity:0;
+     }
+   }
+
+     .bigger {
+       z-index: 2;
+       font-size: 70px;
+       color: lime;
+       animation: fadeIn ease 5s;
+       animation: fadeOut ease 5s;
      }
    }
 
